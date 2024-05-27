@@ -12,25 +12,51 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #343434;
+  --ifm-color-primary-dark: #2f2f2f;
+  --ifm-color-primary-darker: #2c2c2c;
+  --ifm-color-primary-darkest: #242424;
+  --ifm-color-primary-light: #393939;
+  --ifm-color-primary-lighter: #3c3c3c;
+  --ifm-color-primary-lightest: #444444;
+  --ifm-color-secondary:#e9ebf8;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #e9ebf8;
+  --ifm-color-primary-dark: #c5caec;
+  --ifm-color-primary-darker: #b2b9e7;
+  --ifm-color-primary-darkest: #7c87d5;
+  --ifm-color-primary-light: #ffffff;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+  --ifm-color-secondary:#343434;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.navbar__link {
+  display: inline-block;
+  letter-spacing: 0.05em;
+  line-height: 1rem;
+  padding-bottom: 1px;
+  font-size: 14px;
+  transition-property: color, background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 40ms;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.navbar__link:hover {
+  background-color: var(--ifm-color-primary); 
+  color: var(--ifm-color-secondary); 
+  text-decoration: underline; 
+}
+.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: none;
 }
