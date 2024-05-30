@@ -1,0 +1,32 @@
+---
+slug: mdx-button
+title: Button
+authors: [slorber]
+---
+
+import { Button } from 'rewind-uikit'
+import 'rewind-uikit/dist/style.css'
+
+Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+
+:::tip
+
+Use the power of React to create interactive blog posts.
+
+```js
+import { Label } from 'rewind-uikit'
+import 'rewind-uikit/dist/style.css'
+
+;<button onClick={() => alert('button clicked!')}>Click me!</button>
+```
+
+<Button
+  size='md'
+  color='primary'
+  variant='solid'
+  onClick={() => alert('button clicked!')}
+>
+  Click me!
+</Button>
+
+:::
