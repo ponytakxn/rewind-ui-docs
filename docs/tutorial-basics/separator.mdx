@@ -1,0 +1,73 @@
+slug: mdx-Separator
+title: Separator
+authors: [slorber]
+
+---
+
+import { Separator } from 'rewind-uikit'
+import 'rewind-uikit/dist/style.css'
+
+Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+
+:::tip
+
+Use the power of React to create interactive blog posts.
+
+```js
+import { Separator } from 'rewind-uikit'
+import 'rewind-uikit/dist/style.css'
+
+;<div className='flex space-x-10'>
+  <div>
+    <h3>Horizontal</h3>
+    <div className='flex flex-col gap-2 w-[200px] border rounded-md py-xs items-center mt-2'>
+      <p className='py-xxxs'>Item 1</p>
+      <Separator display='horizontal' className='w-full' />
+      <p className='py-xxxs'>Item 2</p>
+      <Separator display='horizontal' className='w-full' />
+      <p className='py-xxxs'>Item 3</p>
+      <Separator display='horizontal' className='w-full' />
+      <p className='py-xxxs'>Item 4</p>
+    </div>
+  </div>
+
+  <div>
+    <h3>Vertical</h3>
+    <div className='flex gap-4 text-sm items-center mt-2'>
+      <p>Docs</p>
+      <Separator display='vertical' className='h-xs' />
+      <p>API</p>
+      <Separator display='vertical' className='h-xs' />
+      <p>Blog</p>
+    </div>
+  </div>
+</div>
+```
+
+<div className='flex space-x-10'>
+      <div>
+        <h3>Horizontal</h3>
+        <div className='flex flex-col gap-2 w-[200px] border rounded-md py-xs items-center mt-2'>
+          <p className='py-xxxs'>Item 1</p>
+          <Separator display='horizontal' className='w-full' />
+          <p className='py-xxxs'>Item 2</p>
+          <Separator display='horizontal' className='w-full' />
+          <p className='py-xxxs'>Item 3</p>
+          <Separator display='horizontal' className='w-full' />
+          <p className='py-xxxs'>Item 4</p>
+        </div>
+      </div>
+
+      <div>
+        <h3>Vertical</h3>
+        <div className='flex gap-4 text-sm items-center mt-2'>
+          <p>Docs</p>
+          <Separator display='vertical' className='h-xs' />
+          <p>API</p>
+          <Separator display='vertical' className='h-xs' />
+          <p>Blog</p>
+        </div>
+      </div>
+    </div>
+
+:::
