@@ -5,23 +5,30 @@ authors: [slorber]
 ---
 
 import { Badge } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+export const BadgePreview = () => {
+  return (
+    <Badge size='sm' variant='solid' color='primary'>
+      This is a badge
+    </Badge>
+  )
+}
 
-:::tip
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={BadgePreview()}>
+    ```js
+      import { Badge } from 'rewind-uikit'
 
-Use the power of React to create interactive blog posts.
+      <Badge size='sm' variant='solid' color='secondary'>Texto</Badge>
+    ```
 
-```js
-import { Label } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
-
-<Badge size='sm'variant='solid'color='secondary'>texto</badge>
-```
-
-<Badge size='sm' variant='solid' color='secondary'>
-  This is a Badge
-</Badge>
-
-:::
+  </DocsTemplate>
+  <div>
+    | Prop    | Values |
+    | -------- | ------- |
+    | size | `sm` , `md` |
+    | variant | `solid` , `outline` |
+    | color | `primary` , `secondary` , `info` |
+  </div>
+</div>

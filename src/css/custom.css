@@ -41,13 +41,11 @@
   display: inline-block;
   letter-spacing: 0.05em;
   line-height: 1rem;
-  padding-bottom: 1px;
+  padding: 0;
   font-size: 14px;
   transition-property: color, background-color;
   transition-timing-function: ease-in-out;
   transition-duration: 40ms;
-  padding-left: 0;
-  padding-right: 0;
   margin-right: 12px;
   margin-left: 12px;
 }

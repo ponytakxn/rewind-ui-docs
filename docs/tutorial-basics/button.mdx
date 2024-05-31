@@ -5,28 +5,40 @@ authors: [slorber]
 ---
 
 import { Button } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+export const ButtonPreview = () => {
+  return (
+    <Button
+      size='md'
+      color='primary'
+      variant='solid'
+      onClick={() => alert('button clicked!')}
+    >
+      Click me!
+    </Button>
+  )
+}
 
-:::tip
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={ButtonPreview()}>
+    ```js
+    import { Button } from 'rewind-uikit'
 
-Use the power of React to create interactive blog posts.
+    <Button
+      size='md'
+      color='primary'
+      variant='solid'
+      onClick={() => alert('button clicked!')}>Click me!
+    </Button>
+    ```
 
-```js
-import { Label } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
-
-;<button onClick={() => alert('button clicked!')}>Click me!</button>
-```
-
-<Button
-  size='md'
-  color='primary'
-  variant='solid'
-  onClick={() => alert('button clicked!')}
->
-  Click me!
-</Button>
-
-:::
+  </DocsTemplate>
+  <div> 
+    | Prop    | Values |
+    | -------- | ------- |
+    | size | `sm` , `md` , `lg` |
+    | variant | `solid` , `outline` , `ghost` |
+    | color | `primary` , `secondary` , `info` , `success` , `danger` |
+  </div>
+</div>
