@@ -1,0 +1,39 @@
+---
+slug: mdx-alert
+title: Alert
+authors: [slorber]
+---
+
+import { Alert, AlertHeader, AlertDescription } from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
+
+export const WarningPreview = () => {
+  return (
+    <Alert type='warning'>
+      <AlertHeader>Warning</AlertHeader>
+      <AlertDescription>Cuidado con quien comparte sus datos</AlertDescription>
+    </Alert>
+  )
+}
+
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={WarningPreview()}>
+    ```js
+    import { Alert, AlertHeader, AlertDescription } from 'rewind-uikit'
+
+    <Alert type='warning'>
+      <AlertHeader>Warning</AlertHeader>
+      <AlertDescription>
+        Cuidado con quien comparte sus datos
+      </AlertDescription>
+    </Alert>
+    ```
+
+  </DocsTemplate>
+    <div> 
+    | Prop    | Values |
+    | -------- | ------- |
+    | variant |  `success` , `info` , `warning` , `danger` |
+  </div>
+  
+</div>

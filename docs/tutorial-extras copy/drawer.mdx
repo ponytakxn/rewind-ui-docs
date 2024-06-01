@@ -1,0 +1,131 @@
+---
+slug: mdx-drawer
+title: Drawer
+authors: [slorber]
+---
+
+import {
+  Drawer,
+  DrawerTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerFooter,
+  Button,
+  Label,
+  Input,
+  DrawerCloseBtn,
+} from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
+
+export const DrawerPreview = () => {
+  return (
+    <Drawer>
+      <DrawerTrigger>
+        <Button variant='solid' color='info' size='sm'>
+          Open Drawer
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent className='items-center'>
+        <DrawerHeader>
+          <DrawerTitle>Edit your profile</DrawerTitle>
+          <DrawerDescription>
+            This information will be displayed publicly so be careful what you
+            share.
+          </DrawerDescription>
+        </DrawerHeader>
+        <form className='flex flex-col gap-xs'>
+          <div className='flex gap-xxs items-center'>
+            <Label htmlFor='name' className='w-[75px]'>
+              Name
+            </Label>
+            <Input
+              type='text'
+              placeholder='John Doe'
+              name='name'
+              className='w-[300px]'
+            />
+          </div>
+          <div className='flex gap-xxs items-center'>
+            <Label htmlFor='email' className='w-[75px]'>
+              Email
+            </Label>
+            <Input
+              type='email'
+              placeholder='john.doe@email.com'
+              name='email'
+              className='w-[300px]'
+            />
+          </div>
+        </form>
+        <DrawerFooter>
+          <Button variant='solid' color='primary' size='md' type='submit'>
+            Save
+          </Button>
+          <DrawerCloseBtn variant='outline' color='primary' size='md'>
+            Close
+          </DrawerCloseBtn>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  )
+}
+
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={<DrawerPreview />}>
+    ```jsx
+    import { Drawer,DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, Button, Label, Input, DrawerCloseBtn } from 'rewind-uikit'
+
+    <Drawer>
+      <DrawerTrigger>
+        <Button variant='solid' color='info' size='sm'>
+          Open Drawer
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent className='items-center'>
+        <DrawerHeader >
+          <DrawerTitle>Edit your profile</DrawerTitle>
+          <DrawerDescription>
+            This information will be displayed publicly so be careful what you
+            share.
+          </DrawerDescription>
+        </DrawerHeader>
+        <form className='flex flex-col gap-xs'>
+          <div className='flex gap-xxs items-center'>
+            <Label htmlFor='name' className='w-[75px]'>
+              Name
+            </Label>
+            <Input
+              type='text'
+              placeholder='John Doe'
+              name='name'
+              className='w-[300px]'
+            />
+          </div>
+          <div className='flex gap-xxs items-center'>
+            <Label htmlFor='email' className='w-[75px]'>
+              Email
+            </Label>
+            <Input
+              type='email'
+              placeholder='john.doe@email.com'
+              name='email'
+              className='w-[300px]'
+            />
+          </div>
+        </form>
+        <DrawerFooter>
+          <Button variant='solid' color='primary' size='md' type='submit'>
+            Save
+          </Button>
+          <DrawerCloseBtn variant='outline' color='primary' size='md'>
+            Close
+          </DrawerCloseBtn>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+    ```
+
+  </DocsTemplate>
+</div>

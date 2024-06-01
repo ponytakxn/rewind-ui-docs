@@ -1,0 +1,81 @@
+---
+slug: mdx-dropdown
+title: Dropdown Menu
+authors: [slorber]
+---
+
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuTitle,
+  DropdownMenuSeparator,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  Button,
+} from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
+
+export const DropdownPreview = () => {
+  return (
+    <DropdownMenu className='mb-[50px] mt-[50px] ' orientation='bottom'>
+      <DropdownMenuTrigger>
+        <Button variant='outline' color='primary' size='sm'>
+          Open Dropdown
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuTitle>Menu Title</DropdownMenuTitle>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>Item 1</DropdownMenuItem>
+          <DropdownMenuItem>Item 2</DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>Item 3</DropdownMenuItem>
+          <DropdownMenuItem disabled>Item disabled</DropdownMenuItem>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}
+
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={<DropdownPreview />}>
+    ```jsx
+    import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, 
+            DropdownMenuTitle, DropdownMenuSeparator, DropdownMenuGroup, 
+            DropdownMenuItem, Button } from 'rewind-uikit'
+
+    <div className='flex justify-center mt-[100px] mb-[500px]'>
+      <DropdownMenu orientation='bottom'>
+        <DropdownMenuTrigger>
+          <Button variant='outline' color='primary' size='sm'>
+            Open Dropdown
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuTitle>Menu Title</DropdownMenuTitle>
+          <DropdownMenuSeparator />
+          <DropdownMenuGroup>
+            <DropdownMenuItem>Item 1</DropdownMenuItem>
+            <DropdownMenuItem>Item 2</DropdownMenuItem>
+          </DropdownMenuGroup>
+          <DropdownMenuSeparator />
+          <DropdownMenuGroup>
+            <DropdownMenuItem>Item 3</DropdownMenuItem>
+            <DropdownMenuItem disabled>Item disabled</DropdownMenuItem>
+          </DropdownMenuGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+    ```
+
+  </DocsTemplate>
+   <div> 
+    | Prop    | Values |
+    | -------- | ------- |
+    | orientation | `top` , `bottom` |
+  </div>
+</div>
