@@ -1,25 +1,31 @@
+---
 slug: mdx-label
 title: Label
 authors: [slorber]
-
 ---
 
 import { Label } from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 import 'rewind-uikit/dist/style.css'
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+export const LabelPreview = () => {
+  return <Label size='sm'>Small Label</Label>
+}
 
-:::tip
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={LabelPreview()}>
+    ```js
+    import { Label } from 'rewind-uikit'
+    import 'rewind-uikit/dist/style.css'
 
-Use the power of React to create interactive blog posts.
+    <Label size='sm'>Small Label</Label>
+    ```
 
-```js
-import { Label } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
-
-;<Label size='sm'>Small Label</Label>
-```
-
-<Label size='sm'>Small Label</Label>
-
-:::
+  </DocsTemplate>
+  <div>
+    | Prop    | Values |
+    | -------- | ------- |
+    | size     | `sm`, `md`, `lg` |
+  
+  </div>
+</div>
