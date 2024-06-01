@@ -1,9 +1,38 @@
 ---
-slug: mdx-Toggle
+slug: mdx-toggle
 title: Toggle
 authors: [slorber]
 ---
 
 import React from 'react'
-import { Toggle } from 'rewind-uikit'
+import { Toggle, Button } from 'rewind-uikit'
 import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
+
+export const TogglePreview = () => {
+  return (
+    <Toggle>
+      <button color='primary'>B</button>
+    </Toggle>
+  )
+}
+
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={<TogglePreview />}>
+    ```jsx
+    import { Toggle, Button } from 'rewind-uikit';
+
+    <Toggle>
+      <button>B</button>
+    </Toggle>;
+    ```
+
+  </DocsTemplate>
+  <div>
+    | Prop     | Values              |
+    | -------- | ------------------- |
+    | checked  | boolean             |
+    | onChange | (event) => void     |
+    | disabled | boolean             |
+    | label    | string              |
+  </div>
+</div>
