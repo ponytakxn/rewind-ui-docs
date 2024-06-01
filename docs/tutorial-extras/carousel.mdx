@@ -1,0 +1,69 @@
+---
+slug: mdx-carousel
+title: Carousel
+authors: [slorber]
+---
+
+import { CarouselContainer, CarouselItem } from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
+
+export const CarouselPreview = () => {
+  return (
+    <CarouselContainer>
+      <CarouselItem>
+        <img
+          src='https://www.prwrestling.com/nw/wp-content/uploads/2024/01/seth-rollins.jpg'
+          className='h-full object-scale-down'
+          alt=''
+        />
+      </CarouselItem>
+      <CarouselItem>
+        <img
+          src='https://solowrestling.mundodeportivo.com/uploads/RESEM129484seth-rollins.jpg'
+          className='h-full object-scale-down'
+          alt=''
+        />
+      </CarouselItem>
+      <CarouselItem>
+        <img
+          src='https://www.wwe.com/f/styles/wwe_large/public/all/2023/05/040_NOC_05272023CM_24393--a469c20ca04b48e7412ec0bef20de503.jpg'
+          className='h-full object-scale-down'
+          alt=''
+        />
+      </CarouselItem>
+    </CarouselContainer>
+  )
+}
+
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={<CarouselPreview />}>
+    ```jsx
+    import { CarouselContainer, CarouselItem } from from 'rewind-uikit'
+
+    <CarouselContainer>
+      <CarouselItem>
+        <img
+          src='https://www.prwrestling.com/nw/wp-content/uploads/2024/01/seth-rollins.jpg'
+          className='h-full object-scale-down'
+          alt=''
+        />
+      </CarouselItem>
+      <CarouselItem>
+        <img
+          src='https://solowrestling.mundodeportivo.com/uploads/RESEM129484seth-rollins.jpg'
+          className='h-full object-scale-down'
+          alt=''
+        />
+      </CarouselItem>
+      <CarouselItem>
+        <img
+          src='https://www.wwe.com/f/styles/wwe_large/public/all/2023/05/040_NOC_05272023CM_24393--a469c20ca04b48e7412ec0bef20de503.jpg'
+          className='h-full object-scale-down'
+          alt=''
+        />
+      </CarouselItem>
+    </CarouselContainer>
+    ```
+
+  </DocsTemplate>
+</div>

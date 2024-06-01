@@ -1,0 +1,82 @@
+---
+slug: mdx-accordion
+title: Accordion
+authors: [slorber]
+---
+
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+  Separator,
+} from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
+
+export const AccordionPreview = () => {
+  return (
+    <div className='flex flex-col gap-8 justify-center items-center'>
+      <Accordion>
+        <AccordionItem value='item-1'>
+          <AccordionTrigger>Este item se expande?</AccordionTrigger>
+          <AccordionContent>
+            <p>Ps mira tú como me expando wey</p>
+          </AccordionContent>
+        </AccordionItem>
+        <Separator display='horizontal' className='w-full' />
+        <AccordionItem value='item-2'>
+          <AccordionTrigger>Y este?</AccordionTrigger>
+          <AccordionContent>
+            <p>Ps parece que sí, mira tú</p>
+          </AccordionContent>
+        </AccordionItem>
+        <Separator display='horizontal' className='w-full' />
+        <AccordionItem value='item-3'>
+          <AccordionTrigger>Este yo creo que ya no, no?</AccordionTrigger>
+          <AccordionContent>
+            <p>Ps parece que sí, mira como me expando</p>
+          </AccordionContent>
+        </AccordionItem>
+        <Separator display='horizontal' className='w-full' />
+      </Accordion>
+    </div>
+  )
+}
+
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={AccordionPreview()}>
+    ```js
+    import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, Separator } from 'rewind-uikit'
+
+    <div className="flex flex-col gap-8 justify-center items-center">
+      <Accordion>
+        <AccordionItem value='item-1'>
+          <AccordionTrigger>Este item se expande?</AccordionTrigger>
+          <AccordionContent>
+            <p>Ps parece que sí, mira tú como me expando wey</p>
+          </AccordionContent>
+        </AccordionItem>
+        <Separator display='horizontal' className='w-full' />
+        <AccordionItem value='item-2'>
+          <AccordionTrigger>Y este?</AccordionTrigger>
+          <AccordionContent>
+            <p>
+              Ps parece que sí, mira tú como me expando wey mira mira mira mira
+              miraaaaaa
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <Separator display='horizontal' className='w-full' />
+        <AccordionItem value='item-3'>
+          <AccordionTrigger>Este yo creo que ya no, no?</AccordionTrigger>
+          <AccordionContent>
+            <p>Ps parece que sí, mira tú como me expando wey</p>
+          </AccordionContent>
+        </AccordionItem>
+        <Separator display='horizontal' className='w-full' />
+      </Accordion>
+    </div>
+    ```
+
+  </DocsTemplate>
+</div>
