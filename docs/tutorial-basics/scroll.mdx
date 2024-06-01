@@ -1,85 +1,51 @@
 ---
-slug: mdx-ScrollArea
+slug: mdx-scrollarea
 title: ScrollArea
 authors: [slorber]
 ---
 
 import { ScrollArea } from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 import 'rewind-uikit/dist/style.css'
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+export const ScrollAreaPreview = () => {
+  return (
+    <ScrollArea variant='secondary'>
+      <div className='w-[500px]'>
+        Scrollable Content vertical Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Fusce volutpat magna mauris, vel consequat magna
+        malesuada et. Duis vulputate iaculis mi, ac tristique lacus maximus
+        vitae. Mauris in commodo justo. Scrollable Content vertical Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Fusce volutpat magna
+        mauris, vel consequat magna malesuada et. Duis vulputate iaculis mi, ac
+        tristique lacus maximus vitae. Mauris in commodo justo. Scrollable
+        Content vertical Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit.
+      </div>
+    </ScrollArea>
+  )
+}
 
-:::tip
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={ScrollAreaPreview()}>
+    ```js
+      import { ScrollArea } from 'rewind-uikit';
+      import 'rewind-uikit/dist/style.css';
 
-Use the power of React to create interactive blog posts.
+      <ScrollArea variant='primary'>
+        <div className='w-[500px]'>
+          Scrollable Content vertical Lorem ipsum dolor sit amet,
+           consectetur adipiscing elit. Fusce volutpat magna mauris,
+           vel consequat magna malesuada et. Duis vulputate iaculis mi,
+           ac tristique lacus maximus vitae. Mauris in commodo justo.
+        </div>
+      </ScrollArea>
+    ```
 
-```jsx
-import { ScrollArea } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
-
-;<ScrollArea variant='primary'>
-  <div className='w-[500px]'>
-    Scrollable Content vertical Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Fusce volutpat magna mauris, vel consequat magna malesuada
-    et. Duis vulputate iaculis mi, ac tristique lacus maximus vitae. Mauris in
-    commodo justo.
+  </DocsTemplate>
+  <div>
+    | Prop   | Values |
+    | ------ | ------- |
+    | variant | `primary`,`danger` |
   </div>
-</ScrollArea>
-```
-
-<ScrollArea variant='secondary'>
-  <div className='w-[500px]'>
-    Scrollable Content vertical Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Fusce volutpat magna mauris, vel consequat magna malesuada
-    et. Duis vulputate iaculis mi, ac tristique lacus maximus vitae. Mauris in
-    commodo justo. Scrollable Content vertical Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit. Fusce volutpat magna mauris, vel consequat
-    magna malesuada et. Duis vulputate iaculis mi, ac tristique lacus maximus
-    vitae. Mauris in commodo justo. Scrollable Content vertical Lorem ipsum
-    dolor sit amet, consectetur adipiscing elit. Fusce volutpat magna mauris,
-    vel consequat magna malesuada et. Duis vulputate iaculis mi, ac tristique
-    lacus maximus vitae. Mauris in commodo justo. Scrollable Content vertical
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat
-    magna mauris, vel consequat magna malesuada et. Duis vulputate iaculis mi,
-    ac tristique lacus maximus vitae. Mauris in commodo justo. Scrollable
-    Content vertical Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Fusce volutpat magna mauris, vel consequat magna malesuada et. Duis
-    vulputate iaculis mi, ac tristique lacus maximus vitae. Mauris in commodo
-    justo. Scrollable Content vertical Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Fusce volutpat magna mauris, vel consequat magna malesuada
-    et. Duis vulputate iaculis mi, ac tristique lacus maximus vitae. Mauris in
-    commodo justo. Scrollable Content vertical Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit. Fusce volutpat magna mauris, vel consequat
-    magna malesuada et. Duis vulputate iaculis mi, ac tristique lacus maximus
-    vitae. Mauris in commodo justo. Scrollable Content vertical Lorem ipsum
-    dolor sit amet, consectetur adipiscing elit. Fusce volutpat magna mauris,
-    vel consequat magna malesuada et. Duis vulputate iaculis mi, ac tristique
-    lacus maximus vitae. Mauris in commodo justo. Scrollable Content vertical
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat
-    magna mauris, vel consequat magna malesuada et. Duis vulputate iaculis mi,
-    ac tristique lacus maximus vitae. Mauris in commodo justo. Scrollable
-    Content vertical Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Fusce volutpat magna mauris, vel consequat magna malesuada et. Duis
-    vulputate iaculis mi, ac tristique lacus maximus vitae. Mauris in commodo
-    justo. Scrollable Content vertical Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Fusce volutpat magna mauris, vel consequat magna malesuada
-    et. Duis vulputate iaculis mi, ac tristique lacus maximus vitae. Mauris in
-    commodo justo. Scrollable Content vertical Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit. Fusce volutpat magna mauris, vel consequat
-    magna malesuada et. Duis vulputate iaculis mi, ac tristique lacus maximus
-    vitae. Mauris in commodo justo. Scrollable Content vertical Lorem ipsum
-    dolor sit amet, consectetur adipiscing elit. Fusce volutpat magna mauris,
-    vel consequat magna malesuada et. Duis vulputate iaculis mi, ac tristique
-    lacus maximus vitae. Mauris in commodo justo. Scrollable Content vertical
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat
-    magna mauris, vel consequat magna malesuada et. Duis vulputate iaculis mi,
-    ac tristique lacus maximus vitae. Mauris in commodo justo. Scrollable
-    Content vertical Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Fusce volutpat magna mauris, vel consequat magna malesuada et. Duis
-    vulputate iaculis mi, ac tristique lacus maximus vitae. Mauris in commodo
-    justo. Scrollable Content vertical Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Fusce volutpat magna mauris, vel consequat magna malesuada
-    et. Duis vulputate iaculis mi, ac tristique lacus maximus vitae. Mauris in
-    commodo justo.
-  </div>
-</ScrollArea>
+</div>

@@ -1,25 +1,32 @@
 ---
-slug: mdx-imput
+slug: mdx-input
 title: Input
 authors: [slorber]
 ---
 
 import { Input } from 'rewind-uikit'
 import 'rewind-uikit/dist/style.css'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+export const InputPreview = () => {
+  return <Input color='primary' placeholder='Email' />
+}
 
-:::tip
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={InputPreview()}>
+    
+    ```js
+    
+    import { Input } from 'rewind-uikit'
+    import 'rewind-uikit/dist/style.css'
 
-Use the power of React to create interactive blog posts.
+    <Input color='primary' placeholder='Email' />
+    ```
 
-```js
-import { Label } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
+  </DocsTemplate>
+  <div>
+    | Prop    | Values |
+    | -------- | ------- |
 
-;<Input color='primary' placeholder='Email' />
-```
-
-<Input color='primary' placeholder='Email' />
-
-:::
+  </div>
+</div>

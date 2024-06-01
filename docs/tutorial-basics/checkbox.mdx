@@ -5,21 +5,33 @@ authors: [slorber]
 ---
 
 import { Checkbox } from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 import 'rewind-uikit/dist/style.css'
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+export const CheckboxPreview = () => {
+  return (
+    <div>
+      <Checkbox color='primary' /> Marcar la opción
+    </div>
+  )
+}
 
-:::tip
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={CheckboxPreview()}>
 
-Use the power of React to create interactive blog posts.
+      ```js
 
-```js
-import { Label } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
+      import { Checkbox } from 'rewind-uikit'
+      import 'rewind-uikit/dist/style.css'
 
-;<Checkbox color='primary' />
-```
+      <Checkbox color='primary' />
 
-<Checkbox color='primary' /> Marcar la opcion
+      ```
 
-:::
+  </DocsTemplate>
+  <div>
+    | Prop    | Values |
+    | -------- | ------- |
+    | color    | `primary`, `secondary`, `info` |
+  </div>
+</div>

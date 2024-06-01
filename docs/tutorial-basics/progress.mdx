@@ -1,25 +1,31 @@
-slug: mdx-ProgressBar
+---
+slug: mdx-progressbar
 title: ProgressBar
 authors: [slorber]
-
 ---
 
+import React from 'react'
 import { ProgressBar } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
+import { DocsTemplate } from '../../src/components/DocsTemplate'
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+export const ProgressBarPreview = () => {
+  return <ProgressBar progress={25} color='primary' bgColor='primary' />
+}
 
-:::tip
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={ProgressBarPreview()}>
+  
+    ```jsx
+    import { ProgressBar } from 'rewind-uikit';
 
-Use the power of React to create interactive blog posts.
+    <ProgressBar progress={25} color="secondary" />;
+    ```
 
-```js
-import { ScrollArea } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
-
-;<ProgressBar progress={25} color='primary' bgColor='primary' />
-```
-
-<ProgressBar progress={25} color='primary' bgColor='primary' />
-
-:::
+  </DocsTemplate>
+  <div>
+    | Prop    | Values |
+    | ------- | ------- |
+    | color   | `primary`, `secondary`, `danger`, `success`, `info`, `warning` |
+    | bgColor | `primary`, `secondary`, `danger`, `success`, `info`, `warning` |
+  </div>
+</div>
