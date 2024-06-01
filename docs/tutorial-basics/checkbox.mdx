@@ -4,16 +4,31 @@ title: Checkbox
 authors: [slorber]
 ---
 
+import React, { useState } from 'react'
 import { Checkbox } from 'rewind-uikit'
 import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
-import 'rewind-uikit/dist/style.css'
 
 export const CheckboxPreview = () => {
-  return (
-    <div>
-      <Checkbox color='primary' /> Marcar la opción
-    </div>
-  )
+  const [isChecked, setIsChecked] = useState(false);
+
+const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+return (
+<div>
+<Checkbox 
+        color='primary'
+        checked={isChecked}
+        onChange={handleCheckboxChange}
+      /> Marcar la opción
+{isChecked ? (
+<p>La opción ha sido marcada!</p>
+) : (
+<p>La opción no está marcada</p>
+)}
+</div>
+)
 }
 
 <div className="flex flex-col gap-8 justify-center items-center">
@@ -22,9 +37,30 @@ export const CheckboxPreview = () => {
       ```js
 
       import { Checkbox } from 'rewind-uikit'
-      import 'rewind-uikit/dist/style.css'
+      import { useState } from 'react'
 
-      <Checkbox color='primary' />
+      export const CustomComponent = () => {
+        const [isChecked, setIsChecked] = useState(false);
+
+        const handleCheckboxChange = () => {
+          setIsChecked(!isChecked);
+        };
+
+        return (
+          <div>
+            <Checkbox
+              color='primary'
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+            /> Marcar la opción
+            {isChecked ? (
+              <p>La opción ha sido marcada!</p>
+            ) : (
+              <p>La opción no está marcada</p>
+            )}
+          </div>
+        )
+      }
 
       ```
 

@@ -27,7 +27,7 @@ export const DrawerPreview = () => {
           Open Drawer
         </Button>
       </DrawerTrigger>
-      <DrawerContent className='items-center'>
+      <DrawerContent className='items-center gap-10'>
         <DrawerHeader>
           <DrawerTitle>Edit your profile</DrawerTitle>
           <DrawerDescription>
@@ -75,7 +75,19 @@ export const DrawerPreview = () => {
 <div className="flex flex-col gap-8 justify-center items-center">
   <DocsTemplate preview={<DrawerPreview />}>
     ```jsx
-    import { Drawer,DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, Button, Label, Input, DrawerCloseBtn } from 'rewind-uikit'
+    import { 
+      Drawer,
+      DrawerTrigger,
+      DrawerContent,
+      DrawerHeader,
+      DrawerTitle,
+      DrawerDescription,
+      DrawerFooter,
+      Button,
+      Label,
+      Input,
+      DrawerCloseBtn,
+    } from 'rewind-uikit'
 
     <Drawer>
       <DrawerTrigger>

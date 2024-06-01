@@ -4,21 +4,61 @@ title: ProgressBar
 authors: [slorber]
 ---
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { ProgressBar } from 'rewind-uikit'
 import { DocsTemplate } from '../../src/components/DocsTemplate'
 
 export const ProgressBarPreview = () => {
-  return <ProgressBar progress={25} color='primary' bgColor='primary' />
+  const numbers = [0, 25, 50, 75, 100];
+  const [currentNumber, setCurrentNumber] = useState(0);
+  const [index, setIndex] = useState(0);
+
+useEffect(() => {
+const interval = setInterval(() => {
+setIndex((prevIndex) => (prevIndex + 1) % numbers.length);
+}, 500); // Cambia cada segundo
+
+    return () => clearInterval(interval);
+
+}, []);
+
+useEffect(() => {
+setCurrentNumber(numbers[index]);
+}, [index]);
+
+return (
+<ProgressBar progress={currentNumber} color='primary' bgColor='primary' className='w-full' />
+)
 }
 
 <div className="flex flex-col gap-8 justify-center items-center">
   <DocsTemplate preview={ProgressBarPreview()}>
   
     ```jsx
+    import {useState, useEffect} from 'react'
     import { ProgressBar } from 'rewind-uikit';
 
-    <ProgressBar progress={25} color="secondary" />;
+    export const CustomComponent = () => {
+      const numbers = [0, 25, 50, 75, 100];
+      const [currentNumber, setCurrentNumber] = useState(0);
+      const [index, setIndex] = useState(0);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setIndex((prevIndex) => (prevIndex + 1) % numbers.length);
+        }, 500); // Cambia cada segundo
+
+        return () => clearInterval(interval);
+      }, []);
+
+      useEffect(() => {
+        setCurrentNumber(numbers[index]);
+      }, [index]);
+
+      return(
+        <ProgressBar progress={currentNumber} color='primary' bgColor='primary' className='w-full'/>;
+      )
+    }
     ```
 
   </DocsTemplate>
