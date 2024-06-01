@@ -1,42 +1,49 @@
 ---
-slug: mdx-Skeleton
+slug: mdx-skeleton
 title: Skeleton
 authors: [slorber]
 ---
 
+import React from 'react'
 import { Skeleton, SkeletonContainer, SkeletonItem } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+export const SkeletonPreview = () => {
+  return (
+    <div className='flex space-x-xxxs animate-pulse'>
+      <SkeletonItem className='h-xl w-xl rounded-full' />
+      <div className='grid gap-xxxs'>
+        <SkeletonItem className='h-xs w-[200px]' />
+        <SkeletonItem className='h-xs w-[250px]' />
+        <SkeletonItem className='h-xs w-[280px]' />
+        <SkeletonItem className='h-xs w-[220px]' />
+        <SkeletonItem className='h-xs w-[300px]' />
+      </div>
+    </div>
+  )
+}
 
-:::tip
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={SkeletonPreview()}>
+    ```jsx
+    import { Skeleton, SkeletonContainer, SkeletonItem } from 'rewind-uikit';
+    import 'rewind-uikit/dist/style.css';
 
-Use the power of React to create interactive blog posts.
+    <div className='flex space-x-xxxs animate-pulse'>
+      <SkeletonItem className='h-xl w-xl rounded-full' />
+      <div className='grid gap-xxxs'>
+        <SkeletonItem className='h-xs w-[200px]' />
+        <SkeletonItem className='h-xs w-[250px]' />
+        <SkeletonItem className='h-xs w-[280px]' />
+        <SkeletonItem className='h-xs w-[220px]' />
+        <SkeletonItem className='h-xs w-[300px]' />
+      </div>
+    </div>
+    ```
 
-```jsx
-import { Skeleton, SkeletonContainer, SkeletonItem } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
-
-;<div className='flex space-x-xxxs animate-pulse'>
-  <SkeletonItem className='h-xl w-xl rounded-full' />
-  <div className='grid gap-xxxs'>
-    <SkeletonItem className='h-xs w-[200px]' />
-    <SkeletonItem className='h-xs w-[250px]' />
-    <SkeletonItem className='h-xs w-[280px]' />
-    <SkeletonItem className='h-xs w-[220px]' />
-    <SkeletonItem className='h-xs w-[300px]' />
+  </DocsTemplate>
+  <div>
+    | Prop        | Values |
+    | ----------- | ------- |
   </div>
 </div>
-```
-
-<div className='flex space-x-xxxs animate-pulse'>
-  <SkeletonItem className='h-xl w-xl rounded-full' />
-  <div className='grid gap-xxxs'>
-    <SkeletonItem className='h-xs w-[200px]' />
-    <SkeletonItem className='h-xs w-[250px]' />
-    <SkeletonItem className='h-xs w-[280px]' />
-    <SkeletonItem className='h-xs w-[220px]' />
-    <SkeletonItem className='h-xs w-[300px]' />
-  </div>
-</div>
-:::

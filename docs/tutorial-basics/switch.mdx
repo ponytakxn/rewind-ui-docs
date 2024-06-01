@@ -1,24 +1,30 @@
-slug: mdx-Switch
+---
+slug: mdx-switch
 title: Switch
 authors: [slorber]
-
 ---
 
+import React from 'react'
 import { Switch } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+export const SwitchPreview = () => {
+  return <Switch id='mode' color='primary' />
+}
 
-:::tip
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={<SwitchPreview />}>
+    ```jsx
+    import { Switch } from 'rewind-uikit';
+    import 'rewind-uikit/dist/style.css';
 
-Use the power of React to create interactive blog posts.
+    <Switch id='mode' color='primary' />;
+    ```
 
-```js
-import { Switch } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
-
-;<Switch id='mode' color='primary' />
-```
-
-<Switch id='mode' color='primary' />
-:::
+  </DocsTemplate>
+  <div>
+    | Prop     | Values                                  |
+    | -------- | ---------------------------------------- |
+    | color    | `primary`, `secondary`|
+  </div>
+</div>

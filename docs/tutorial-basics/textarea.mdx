@@ -1,24 +1,32 @@
-slug: mdx-TextArea
+---
+slug: mdx-textarea
 title: TextArea
 authors: [slorber]
-
 ---
 
+import React from 'react'
 import { TextArea } from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 import 'rewind-uikit/dist/style.css'
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+export const TextAreaPreview = () => {
+  return <TextArea />
+}
 
-:::tip
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={<TextAreaPreview />}>
+    ```jsx
+    import { TextArea } from 'rewind-uikit';
+    import 'rewind-uikit/dist/style.css';
 
-Use the power of React to create interactive blog posts.
+    <TextArea />;
+    ```
 
-```js
-import { TextArea } from 'rewind-uikit'
-import 'rewind-uikit/dist/style.css'
+  </DocsTemplate>
+  <div>
+    | Prop     | Values              |
+    | -------- | ------------------- |
 
-;<TextArea></TextArea>
-```
 
-<TextArea></TextArea>
-:::
+  </div>
+</div>
