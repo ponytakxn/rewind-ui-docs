@@ -27,9 +27,14 @@ setCurrentNumber(numbers[index]);
 }, [index]);
 
 return (
-<ProgressBar progress={currentNumber} color='primary' bgColor='primary' className='w-full' />
-)
-}
+
+<ProgressBar
+  progress={currentNumber}
+  color='primary'
+  bgColor='primary'
+  className='w-full'
+/>
+) }
 
 <div className="flex flex-col gap-8 justify-center items-center">
   <DocsTemplate preview={ProgressBarPreview()}>

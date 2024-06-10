@@ -1,0 +1,64 @@
+---
+slug: pagination/5
+title: Pagination
+sidebar_class_name: hiddenSidebar
+---
+
+import { Pagination } from 'rewind-uikit'
+import { useState } from 'react'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
+
+export const PaginationPreview = () => {
+  const [page, setPage] = useState(5)
+
+const handlePagination = (pageNb) => {
+setPage(pageNb)
+}
+
+return <Pagination slug='docs/components/pagination' totalPages={5} page={5} handlePagination={handlePagination} />
+}
+
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={<PaginationPreview />}>
+
+```jsx
+import { useState } from 'react'
+import { Pagination } from 'rewind-uikit'
+
+export const CustomComponent = () => {
+  const [page, setPage] = useState(1)
+
+  const handlePagination = (pageNb) => {
+    setPage(pageNb)
+  }
+
+  return (
+    <Pagination
+      slug='docs/components/pagination'
+      totalPages={5}
+      page={page}
+      handlePagination={handlePagination}
+    />
+  )
+}
+```
+
+  </DocsTemplate>
+
+  <div>
+    | Prop    | Values |
+    | -------- | ------- |
+    | slug  | `string`: Slug for pagination. Can be an empty string |
+    | totalPages  | `number`: Total of pages |
+    | page  | `number`: Actual page |
+    | handlePagination  | `void`: Function to handle pagination |
+  </div>
+</div>
+
+### Settings
+
+The internal configuration of the component works as follows:
+
+The slug is what comes before the page number. If the slug is empty then the pagination will look like this `/pageNumber`. To have a custom slug you must enter it ending without a `/`, for example if we want to put a slug for a page `products` the slug should look like this: `products`, which would result in `/products/pageNumber`.
+
+On the other hand, handlePagination is the function that will handle the change in pagination. Internally the pagination buttons have a function called as follows `handlePagination(page+1)`. This is why the function handlePagination should look like in the example, being a simple function that sets the new page number,

@@ -16,20 +16,21 @@ const handleCheckboxChange = () => {
   };
 
 return (
+
 <div>
-<Checkbox 
-        color='primary'
-        checked={isChecked}
-        onChange={handleCheckboxChange}
-      /> Marcar la opción
-{isChecked ? (
-<p>La opción ha sido marcada!</p>
-) : (
-<p>La opción no está marcada</p>
-)}
+  <Checkbox
+    color='primary'
+    checked={isChecked}
+    onChange={handleCheckboxChange}
+  />{' '}
+  Marcar la opción
+  {isChecked ? (
+    <p>La opción ha sido marcada!</p>
+  ) : (
+    <p>La opción no está marcada</p>
+  )}
 </div>
-)
-}
+) }
 
 <div className="flex flex-col gap-8 justify-center items-center">
   <DocsTemplate preview={CheckboxPreview()}>
