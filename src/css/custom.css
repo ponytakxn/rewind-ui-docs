@@ -110,3 +110,15 @@ h5 {
 h6 {
   font-size: var(--ifm-h6-font-size);
 }
+
+.cardContent {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.cardContainer {
+  background-color: white;
+  width: 350px;
+}

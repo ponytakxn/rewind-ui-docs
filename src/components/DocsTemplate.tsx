@@ -15,7 +15,7 @@ export const DocsTemplate = ({ preview, children }: Props) => {
           <TabTrigger value='code'>Code</TabTrigger>
         </TabsList>
         <TabContent value='preview'>{preview}</TabContent>
-        <TabContent value='code' className='justify-start'>
+        <TabContent value='code' className='justify-start overflow-auto'>
           {children}
         </TabContent>
       </Tabs>

@@ -1,0 +1,67 @@
+---
+slug: hover-card
+title: Hover Card
+---
+
+import {
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
+  Badge,
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+} from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
+
+export const HoverCardPrev = () => {
+  return (
+    <>
+      <div className='flex justify-center my-[150px]'>
+        <HoverCard>
+          <HoverCardTrigger>
+            <Badge size='md' variant='solid' color='primary'>
+              Hover here
+            </Badge>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <Card className='w-[300px]'>
+              <CardHeader>Info perfil</CardHeader>
+              <CardContent>Aquí va el perfil y toda su información</CardContent>
+              <CardFooter>El footer</CardFooter>
+            </Card>
+          </HoverCardContent>
+        </HoverCard>
+      </div>
+    </>
+  )
+}
+
+<div className="flex flex-col gap-8 justify-center items-center">
+  <DocsTemplate preview={<HoverCardPrev />}>
+    ```jsx
+    import { 
+      HoverCard, HoverCardTrigger, HoverCardContent, 
+      Badge, 
+      Card, CardHeader, CardContent, CardFooter 
+    } from 'rewind-uikit'
+
+    <div className='flex justify-center my-[300px]'>
+      <HoverCard>
+        <HoverCardTrigger>
+          <Badge>Hover here</Badge>
+        </HoverCardTrigger>
+        <HoverCardContent>
+          <Card className='w-[300px]'>
+            <CardHeader>Info perfil</CardHeader>
+            <CardContent>Aquí va el perfil y toda su información</CardContent>
+            <CardFooter>El footer</CardFooter>
+          </Card>
+        </HoverCardContent>
+      </HoverCard>
+    </div>
+    ```
+
+  </DocsTemplate>
+</div>

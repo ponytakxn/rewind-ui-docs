@@ -1,0 +1,214 @@
+---
+slug: Styling
+title: Styling
+description: Guide to customize your components
+sidebar_position: 2
+---
+
+import { Card, CardHeader, CardContent, CardFooter, Button } from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
+
+export const DefaultCardPreview = () => {
+  return (
+    <Card>
+      <img
+        src='https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_1280.png'
+        className=''
+        alt='Mountains'
+      />
+      <CardHeader>Header</CardHeader>
+      <CardContent>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum
+      </CardContent>
+      <CardFooter>
+        <Button size='md' variant='solid' color='info'>
+          Learn more
+        </Button>
+      </CardFooter>
+    </Card>
+  )
+}
+
+export const CustomCardPreview = () => {
+  return (
+    <Card className='bg-white w-[350px] m-auto mb-8'>
+      <img
+        src='https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_1280.png'
+        className=''
+        alt='Mountains'
+      />
+      <CardHeader>Header</CardHeader>
+      <CardContent className='line-clamp-4'>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum
+      </CardContent>
+      <CardFooter>
+        <Button size='md' variant='solid' color='info'>
+          Learn more
+        </Button>
+      </CardFooter>
+    </Card>
+  )
+}
+
+export const CustomCSSCardPreview = () => {
+  return (
+    <Card className='cardContainer m-auto mb-8'>
+      <img
+        src='https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_1280.png'
+        className=''
+        alt='Mountains'
+      />
+      <CardHeader>Header</CardHeader>
+      <CardContent className='cardContent'>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum
+      </CardContent>
+      <CardFooter>
+        <Button size='md' variant='solid' color='info'>
+          Learn more
+        </Button>
+      </CardFooter>
+    </Card>
+  )
+}
+
+ReWindUI is developed internally with TailwindCSS and is intended to be fully customizable. Each component has the possibility to be modified by the user as desired.
+
+Being developed with TailwindCSS, the easiest way to be able to modify the components is also using TailwindCSS, but it is not the only way. Let's see how to do it using TailwindCSS and how to do it with CSS files.
+
+## Styling with TailwindCSS
+
+To modify a component using TailwindCSS you simply add the desired styles to the component through the `className` property. Let's see an example:
+
+<details className='max-w-[75%]'>
+  <summary>Default Card component</summary>
+  <DocsTemplate preview={<DefaultCardPreview/>}>
+    ```jsx
+      import { Card, CardHeader, CardContent, CardFooter, Button } from 'rewind-uikit'
+
+      <Card>
+        <img
+        src='https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_1280.png'
+        className=''
+        alt='Mountains'
+        />
+
+        <CardHeader>Header</CardHeader>
+
+        <CardContent>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+          sunt in culpa qui officia deserunt mollit anim id est laborum
+        </CardContent>
+
+        <CardFooter>
+          <Button size='md' variant='solid' color='info'>
+            Learn more
+          </Button>
+        </CardFooter>
+      </Card>
+    ```
+
+  </DocsTemplate>
+</details>
+
+### Custom Card component
+
+<CustomCardPreview />
+
+```jsx
+import { Card, CardHeader, CardContent, CardFooter, Button } from 'rewind-uikit'
+
+;<Card className='bg-white w-[350px]'>
+  <img
+    src='https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_1280.png'
+    className=''
+    alt='Mountains'
+  />
+
+  <CardHeader>Header</CardHeader>
+
+  <CardContent className='line-clamp-4'>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  </CardContent>
+
+  <CardFooter>
+    <Button size='md' variant='solid' color='info'>
+      Learn more
+    </Button>
+  </CardFooter>
+</Card>
+```
+
+## Using CSS files
+
+To customize your components using raw CSS files simply add a class name or id to the component and then add your styles to your CSS file.
+
+<CustomCSSCardPreview />
+
+```jsx title='customPage.tsx'
+import { Card, CardHeader, CardContent, CardFooter, Button } from 'rewind-uikit'
+
+;<Card className='cardContainer'>
+  <img
+    src='https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_1280.png'
+    className=''
+    alt='Mountains'
+  />
+
+  <CardHeader>Header</CardHeader>
+
+  <CardContent className='cardContent'>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  </CardContent>
+
+  <CardFooter>
+    <Button size='md' variant='solid' color='info'>
+      Learn more
+    </Button>
+  </CardFooter>
+</Card>
+```
+
+```css title='custom.css'
+.cardContent {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.cardContainer {
+  background-color: white;
+  width: 350px;
+}
+```
