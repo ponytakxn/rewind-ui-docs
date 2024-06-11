@@ -18,7 +18,7 @@ import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 
 export const DropdownPreview = () => {
   return (
-    <DropdownMenu className='mb-[150px] mt-[10px]' orientation='bottom'>
+    <DropdownMenu className='mb-[10px] mt-[10px]' orientation='bottom'>
       <DropdownMenuTrigger>
         <Button variant='outline' color='primary' size='sm'>
           Open Dropdown
@@ -48,28 +48,26 @@ export const DropdownPreview = () => {
             DropdownMenuTitle, DropdownMenuSeparator, DropdownMenuGroup, 
             DropdownMenuItem, Button } from 'rewind-uikit'
 
-    <div className='flex justify-center mt-[100px] mb-[500px]'>
-      <DropdownMenu orientation='bottom'>
-        <DropdownMenuTrigger>
-          <Button variant='outline' color='primary' size='sm'>
-            Open Dropdown
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuTitle>Menu Title</DropdownMenuTitle>
-          <DropdownMenuSeparator />
-          <DropdownMenuGroup>
-            <DropdownMenuItem>Item 1</DropdownMenuItem>
-            <DropdownMenuItem>Item 2</DropdownMenuItem>
-          </DropdownMenuGroup>
-          <DropdownMenuSeparator />
-          <DropdownMenuGroup>
-            <DropdownMenuItem>Item 3</DropdownMenuItem>
-            <DropdownMenuItem disabled>Item disabled</DropdownMenuItem>
-          </DropdownMenuGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
+    <DropdownMenu className='mb-[10px] mt-[10px]' orientation='bottom'>
+      <DropdownMenuTrigger>
+        <Button variant='outline' color='primary' size='sm'>
+          Open Dropdown
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuTitle>Menu Title</DropdownMenuTitle>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>Item 1</DropdownMenuItem>
+          <DropdownMenuItem>Item 2</DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>Item 3</DropdownMenuItem>
+          <DropdownMenuItem disabled>Item disabled</DropdownMenuItem>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
     ```
 
   </DocsTemplate>

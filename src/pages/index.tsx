@@ -25,7 +25,7 @@ export default function Home(): JSX.Element {
         <img
           src='img/rw-logo.svg'
           alt='ReWind-Logo'
-          className='h-[500px] w-[500px] '
+          className='h-[50vh] w-[500px] '
         />
         <div>
           <div className='flex gap-4'>
@@ -48,7 +48,7 @@ export default function Home(): JSX.Element {
 
           <div className='group relative flex mt-4 justify-center'>
             <div
-              className='px-6 py-4 bg-primary text-secondary rounded-md flex gap-6 cursor-pointer relative'
+              className='px-6 py-4 bg-primary text-white rounded-md flex gap-6 cursor-pointer relative'
               onClick={handleClickCopyToClipboard}
             >
               <span>$ npm install rewind-uikit</span>
