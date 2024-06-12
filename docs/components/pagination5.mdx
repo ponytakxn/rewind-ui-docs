@@ -15,7 +15,7 @@ const handlePagination = (pageNb) => {
 setPage(pageNb)
 }
 
-return <Pagination slug='docs/components/pagination' totalPages={5} page={5} handlePagination={handlePagination} />
+return <Pagination slug='docs/components/pagination/' totalPages={5} page={5} handlePagination={handlePagination} />
 }
 
 <div className="flex flex-col gap-8 justify-center items-center">
@@ -34,7 +34,7 @@ export const CustomComponent = () => {
 
   return (
     <Pagination
-      slug='docs/components/pagination'
+      slug='docs/components/pagination/'
       totalPages={5}
       page={page}
       handlePagination={handlePagination}
@@ -48,7 +48,7 @@ export const CustomComponent = () => {
   <div>
     | Prop    | Values |
     | -------- | ------- |
-    | slug  | `string`: Slug for pagination. Can be an empty string |
+    | slug  | `string`: Slug for pagination. Can be an empty string. Must end with '/' |
     | totalPages  | `number`: Total of pages |
     | page  | `number`: Actual page |
     | handlePagination  | `void`: Function to handle pagination |
@@ -59,6 +59,6 @@ export const CustomComponent = () => {
 
 The internal configuration of the component works as follows:
 
-The slug is what comes before the page number. If the slug is empty then the pagination will look like this `/pageNumber`. To have a custom slug you must enter it ending without a `/`, for example if we want to put a slug for a page `products` the slug should look like this: `products`, which would result in `/products/pageNumber`.
+The slug is what comes before the page number. If the slug is empty then the pagination will look like this `/pageNumber/`. To have a custom slug you must enter it ending with `/`, for example if we want to put a slug for a page `products` the slug should look like this: `products/`, which would result in `/products/pageNumber`.
 
 On the other hand, handlePagination is the function that will handle the change in pagination. Internally the pagination buttons have a function called as follows `handlePagination(page+1)`. This is why the function handlePagination should look like in the example, being a simple function that sets the new page number,

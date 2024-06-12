@@ -9,7 +9,7 @@ import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
 
 export const SkeletonPreview = () => {
   return (
-    <SkeletonContainer className='space-y-xxxs'>
+    <SkeletonContainer className='space-y-xxxs animate-pulse'>
       <div className='flex space-x-xxxs'>
         <SkeletonItem className='h-xl w-xl rounded-full' />
         <div className='grid gap-xxxs'>
@@ -30,7 +30,7 @@ export const SkeletonPreview = () => {
     import { Skeleton, SkeletonContainer, SkeletonItem } from 'rewind-uikit';
     import 'rewind-uikit/dist/style.css';
 
-    <SkeletonContainer className='space-y-xxxs'>
+    <SkeletonContainer className='space-y-xxxs animate-pulse'>
       <div className='flex space-x-xxxs'>
         <SkeletonItem className='h-xl w-xl rounded-full' />
         <div className='grid gap-xxxs'>
