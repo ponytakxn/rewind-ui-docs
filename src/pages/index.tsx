@@ -6,14 +6,33 @@ import React, { useState } from 'react'
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext()
   const [showTooltip, setShowTooltip] = useState(false)
+  const [selectedOption, setSelectedOption] = useState('npm')
 
   const handleClickCopyToClipboard = () => {
-    navigator.clipboard.writeText('npm install rewind-uikit')
+    switch (selectedOption) {
+      case 'npm':
+        navigator.clipboard.writeText('npm install rewind-uikit')
+        break
+      case 'pnpm':
+        navigator.clipboard.writeText('pnpm install rewind-uikit')
+        break
+      case 'yarn':
+        navigator.clipboard.writeText('yarn install rewind-uikit')
+        break
+      default:
+        navigator.clipboard.writeText('npm install rewind-uikit')
+        break
+    }
+
     setShowTooltip(true)
 
     setTimeout(() => {
       setShowTooltip(false)
     }, 1500)
+  }
+
+  const handleChangeOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(e.target.value)
   }
 
   return (
@@ -45,13 +64,24 @@ export default function Home(): JSX.Element {
               </Button>
             </a>
           </div>
+        </div>
 
-          <div className='group relative flex mt-4 justify-center'>
+        <section className='flex gap-2 items-center'>
+          <div className='group relative flex justify-center'>
             <div
               className='px-6 py-4 bg-primary text-white rounded-md flex gap-6 cursor-pointer relative'
               onClick={handleClickCopyToClipboard}
             >
-              <span>$ npm install rewind-uikit</span>
+              {selectedOption === 'npm' && (
+                <span>$ npm install rewind-uikit</span>
+              )}
+              {selectedOption === 'pnpm' && (
+                <span>$ pnpm install rewind-uikit</span>
+              )}
+              {selectedOption === 'yarn' && (
+                <span>$ yarn install rewind-uikit</span>
+              )}
+
               <svg
                 width='24'
                 height='24'
@@ -68,7 +98,19 @@ export default function Home(): JSX.Element {
               </span>
             )}
           </div>
-        </div>
+
+          <select
+            name='pkg-manager'
+            id='pkg-manager'
+            value={selectedOption}
+            onChange={handleChangeOption}
+            className='appearance-none h-fit p-2 border font-semibold border-primary text-primary rounded-lg text-center cursor-pointer row-start-1 col-start-1'
+          >
+            <option value='npm'>npm</option>
+            <option value='pnpm'>pnpm</option>
+            <option value='yarn'>yarn</option>
+          </select>
+        </section>
       </main>
     </Layout>
   )
