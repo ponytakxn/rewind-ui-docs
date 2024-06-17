@@ -48,7 +48,7 @@ export default function Home(): JSX.Element {
         />
         <div>
           <div className='flex gap-4'>
-            <a href='/docs/intro'>
+            <a href='/docs/getting-started/installation'>
               <Button
                 variant='ghost'
                 color='primary'
@@ -58,7 +58,7 @@ export default function Home(): JSX.Element {
                 Docs
               </Button>
             </a>
-            <a href='/blog'>
+            <a href='/examples'>
               <Button variant='ghost' color='primary' size='lg'>
                 Examples
               </Button>

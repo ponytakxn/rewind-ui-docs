@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
   title: 'ReWindUI',
-  tagline: 'Dinosaurs are cool',
+  tagline: '',
   favicon: 'img/RW-logo.svg',
 
   // Set the production url of your site here
@@ -69,7 +69,7 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },
-        { to: '/blog', label: 'Example', position: 'left' },
+        { to: '/examples', label: 'Examples', position: 'left' },
         {
           href: 'https://github.com/ponytakxn/rewind-ui/tree/main',
           label: 'GitHub',
