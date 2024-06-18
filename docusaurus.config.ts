@@ -53,8 +53,11 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'ReWindUI',
@@ -79,27 +82,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      // links: [
-      //   {
-      //     title: 'Document',
-      //     items: [
-      //       {
-      //         label: 'Component UI',
-      //         to: '/docs/intro',
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: 'GitHub',
-      //     items: [
-      //       {
-      //         label: 'Github Component',
-      //         href: 'https://github.com/ponytakxn/rewind-ui',
-      //       },
-      //     ],
-      //   },
-      // ],
-      copyright: `Copyright © ${new Date().getFullYear()} ReWindUI, Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ReWind UI Kit`,
     },
     prism: {
       theme: prismThemes.github,
