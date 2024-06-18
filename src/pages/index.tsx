@@ -7,23 +7,38 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext()
   const [showTooltip, setShowTooltip] = useState(false)
   const [selectedOption, setSelectedOption] = useState('npm')
-  const bgColors = ['#343434', '#58B09C', '#F7EF99', '#F45866']
-  const colors = ['white', '#343434', '#343434', 'white']
+  const bgColors = ['#343434', 'white', 'white', 'white']
+  const colors = ['white', '#58B09C', '#F45866', '#343434']
+  const textDecorators = ['underline', 'none', 'underline', 'line-through']
+  const fontStyles = ['normal', 'italic', 'normal', 'normal']
+  const texts = ['everything', 'everything', 'everything', 'nothing']
   const [currentBgColorIndex, setCurrentBgColorIndex] = useState(0)
   const [currentColorIndex, setCurrentColorIndex] = useState(0)
+  const [currentDecorationIndex, setCurrentDecorationIndex] = useState(0)
+  const [currentStyleIndex, setCurrentStyleIndex] = useState(0)
+  const [currentTextIndex, setCurrentTextIndex] = useState(0)
 
   useEffect(() => {
     const changeColor = () => {
       setCurrentBgColorIndex((prevIndex) => (prevIndex + 1) % bgColors.length)
       setCurrentColorIndex((prevIndex) => (prevIndex + 1) % colors.length)
+      setCurrentDecorationIndex(
+        (prevIndex) => (prevIndex + 1) % textDecorators.length
+      )
+      setCurrentStyleIndex((prevIndex) => (prevIndex + 1) % fontStyles.length)
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length)
     }
-
-    console.log(bgColors[currentBgColorIndex], colors[currentColorIndex])
 
     const intervalId = setInterval(changeColor, 2000)
 
     return () => clearInterval(intervalId)
-  }, [bgColors.length, colors.length])
+  }, [
+    bgColors.length,
+    colors.length,
+    textDecorators.length,
+    fontStyles.length,
+    texts.length,
+  ])
 
   const handleClickCopyToClipboard = () => {
     switch (selectedOption) {
@@ -69,13 +84,15 @@ export default function Home(): JSX.Element {
           <Label className='text-2xl'>
             Customize{' '}
             <span
-              className='underline text-white p-0 transition-colors duration-500'
+              className='underline text-white p-0 transition-all duration-500'
               style={{
                 backgroundColor: bgColors[currentBgColorIndex],
                 color: colors[currentColorIndex],
+                textDecoration: textDecorators[currentDecorationIndex],
+                fontStyle: fontStyles[currentStyleIndex],
               }}
             >
-              everything
+              {texts[currentTextIndex]}
             </span>
           </Label>
         </div>
