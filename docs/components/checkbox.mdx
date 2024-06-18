@@ -15,21 +15,17 @@ const handleCheckboxChange = () => {
   };
 
 return (
+
 <div>
-<Checkbox
-        color='primary'
-        checked={isChecked}
-        onChange={handleCheckboxChange}
-      />{' '}
-Marcar la opción
-{isChecked ? (
-<p>La opción ha sido marcada!</p>
-) : (
-<p>La opción no está marcada</p>
-)}
+  <Checkbox
+    color='primary'
+    checked={isChecked}
+    onChange={handleCheckboxChange}
+  />{' '}
+  Check this option
+  {isChecked ? <p>Option checked!</p> : <p>You don't check the option...</p>}
 </div>
-)
-}
+) }
 
 Checkboxes allow users to select one or more options from a set.
 They can also support an indeterminate state, making them useful for complex forms where multiple selections and hierarchies need to be managed.
@@ -55,11 +51,11 @@ export const CustomComponent = () => {
         checked={isChecked}
         onChange={handleCheckboxChange}
       />{' '}
-      Marcar la opción
+      Check this option
       {isChecked ? (
-        <p>La opción ha sido marcada!</p>
+        <p>Option checked!</p>
       ) : (
-        <p>La opción no está marcada</p>
+        <p>You don't check the option...</p>
       )}
     </div>
   )

@@ -1,0 +1,49 @@
+---
+slug: toast
+title: Toast / Snackbar
+---
+
+import React from 'react'
+import { Toast, ToastContent, ToastTrigger, Button } from 'rewind-uikit'
+import { DocsTemplate } from '../../src/components/DocsTemplate.tsx'
+
+export const ToastPreview = () => {
+  return (
+    <Toast dismissTime={3000}>
+      <ToastTrigger>
+        <Button variant='solid' color='primary' size='md'>
+          Show toast
+        </Button>
+      </ToastTrigger>
+      <ToastContent>Congrats! This is a toast message!</ToastContent>
+    </Toast>
+  )
+}
+
+The Toast/Snackbar component provides brief messages that appear temporarily at the bottom or top of the screen.
+These notifications are used to inform users about actions they have taken or events that have occurred, such as a successful form submission or a new message received.
+They typically disappear automatically after a few seconds or can be dismissed by the user, ensuring they don't obstruct the main content for long periods.
+
+<div className="flex flex-col gap-8 justify-center">
+  <DocsTemplate preview={ToastPreview()}>
+    ```js
+    import { Toast, ToastContent, ToastTrigger, Button } from 'rewind-uikit'
+
+    <Toast dismissTime={3000}>
+      <ToastTrigger>
+        <Button variant='solid' color='primary' size='md'>Show toast</Button>
+      </ToastTrigger>
+      <ToastContent>
+        Congrats! This is a toast message!
+      </ToastContent>
+    </Toast>
+    ```
+
+  </DocsTemplate>
+
+  <div>
+    | Prop    | Values |
+    | -------- | ------- |
+    | dismissTime  | `number`: Time for the toast to dissapear. In milliseconds. |
+  </div>
+</div>

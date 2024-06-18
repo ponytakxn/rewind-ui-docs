@@ -1,12 +1,29 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Layout from '@theme/Layout'
-import { Button } from 'rewind-uikit'
-import React, { useState } from 'react'
+import { Button, Label } from 'rewind-uikit'
+import React, { useEffect, useState } from 'react'
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext()
   const [showTooltip, setShowTooltip] = useState(false)
   const [selectedOption, setSelectedOption] = useState('npm')
+  const bgColors = ['#343434', '#58B09C', '#F7EF99', '#F45866']
+  const colors = ['white', '#343434', '#343434', 'white']
+  const [currentBgColorIndex, setCurrentBgColorIndex] = useState(0)
+  const [currentColorIndex, setCurrentColorIndex] = useState(0)
+
+  useEffect(() => {
+    const changeColor = () => {
+      setCurrentBgColorIndex((prevIndex) => (prevIndex + 1) % bgColors.length)
+      setCurrentColorIndex((prevIndex) => (prevIndex + 1) % colors.length)
+    }
+
+    console.log(bgColors[currentBgColorIndex], colors[currentColorIndex])
+
+    const intervalId = setInterval(changeColor, 2000)
+
+    return () => clearInterval(intervalId)
+  }, [bgColors.length, colors.length])
 
   const handleClickCopyToClipboard = () => {
     switch (selectedOption) {
@@ -44,8 +61,25 @@ export default function Home(): JSX.Element {
         <img
           src='img/rw-logo.svg'
           alt='ReWind-Logo'
-          className='h-[50vh] w-[500px] '
+          className='h-[40vh] w-[500px] '
         />
+
+        <div className='grid text-3xl text-center'>
+          <Label>Build fast</Label>
+          <Label className='text-2xl'>
+            Customize{' '}
+            <span
+              className='underline text-white p-0 transition-colors duration-500'
+              style={{
+                backgroundColor: bgColors[currentBgColorIndex],
+                color: colors[currentColorIndex],
+              }}
+            >
+              everything
+            </span>
+          </Label>
+        </div>
+
         <div>
           <div className='flex gap-4'>
             <a href='/docs/getting-started/installation'>

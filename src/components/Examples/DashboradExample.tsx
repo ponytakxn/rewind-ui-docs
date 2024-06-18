@@ -326,7 +326,7 @@ export const DashboradExample = () => {
                   <img
                     src='https://adalysis.com/wp-content/uploads/2019/04/image.png'
                     alt=''
-                    className='h-[150px] w-full'
+                    className='h-[150px] min-h-[100px] max-h-[60%] w-full'
                   />
                 </div>
               </CardContent>
