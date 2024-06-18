@@ -15,7 +15,7 @@ export const ProgressBarPreview = () => {
 useEffect(() => {
 const interval = setInterval(() => {
 setIndex((prevIndex) => (prevIndex + 1) % numbers.length);
-}, 500); // Cambia cada segundo
+}, 500);
 
     return () => clearInterval(interval);
 
@@ -26,16 +26,19 @@ setCurrentNumber(numbers[index]);
 }, [index]);
 
 return (
-
 <ProgressBar
-  progress={currentNumber}
-  color='primary'
-  bgColor='primary'
-  className='w-full'
-/>
-) }
+      progress={currentNumber}
+      color='primary'
+      bgColor='primary'
+      className='w-full'
+    />
+)
+}
 
-<div className="flex flex-col gap-8 justify-center items-center">
+ProgressBars visually represent the completion status of a task or process, using various styles and animations to indicate progress.
+They help users understand how much of the task is completed and how much is remaining.
+
+<div className="flex flex-col gap-8 justify-center">
   <DocsTemplate preview={ProgressBarPreview()}>
   
     ```jsx

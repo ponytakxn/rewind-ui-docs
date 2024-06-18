@@ -15,59 +15,63 @@ const handleCheckboxChange = () => {
   };
 
 return (
-
 <div>
-  <Checkbox
-    color='primary'
-    checked={isChecked}
-    onChange={handleCheckboxChange}
-  />{' '}
-  Marcar la opción
-  {isChecked ? (
-    <p>La opción ha sido marcada!</p>
-  ) : (
-    <p>La opción no está marcada</p>
-  )}
+<Checkbox
+        color='primary'
+        checked={isChecked}
+        onChange={handleCheckboxChange}
+      />{' '}
+Marcar la opción
+{isChecked ? (
+<p>La opción ha sido marcada!</p>
+) : (
+<p>La opción no está marcada</p>
+)}
 </div>
-) }
+)
+}
 
-<div className="flex flex-col gap-8 justify-center items-center">
+Checkboxes allow users to select one or more options from a set.
+They can also support an indeterminate state, making them useful for complex forms where multiple selections and hierarchies need to be managed.
+
+<div className="flex flex-col gap-8 justify-center">
   <DocsTemplate preview={CheckboxPreview()}>
 
-      ```js
+```js
+import { Checkbox } from 'rewind-uikit'
+import { useState } from 'react'
 
-      import { Checkbox } from 'rewind-uikit'
-      import { useState } from 'react'
+export const CustomComponent = () => {
+  const [isChecked, setIsChecked] = useState(false)
 
-      export const CustomComponent = () => {
-        const [isChecked, setIsChecked] = useState(false);
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked)
+  }
 
-        const handleCheckboxChange = () => {
-          setIsChecked(!isChecked);
-        };
-
-        return (
-          <div>
-            <Checkbox
-              color='primary'
-              checked={isChecked}
-              onChange={handleCheckboxChange}
-            /> Marcar la opción
-            {isChecked ? (
-              <p>La opción ha sido marcada!</p>
-            ) : (
-              <p>La opción no está marcada</p>
-            )}
-          </div>
-        )
-      }
-
-      ```
+  return (
+    <div>
+      <Checkbox
+        color='primary'
+        checked={isChecked}
+        onChange={handleCheckboxChange}
+      />{' '}
+      Marcar la opción
+      {isChecked ? (
+        <p>La opción ha sido marcada!</p>
+      ) : (
+        <p>La opción no está marcada</p>
+      )}
+    </div>
+  )
+}
+```
 
   </DocsTemplate>
+  
   <div>
     | Prop    | Values |
     | -------- | ------- |
     | color    | `primary`, `secondary`, `info` |
   </div>
+  
 </div>

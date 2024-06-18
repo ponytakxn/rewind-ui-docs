@@ -24,7 +24,10 @@ export const SkeletonPreview = () => {
   )
 }
 
-<div className="flex flex-col gap-8 justify-center items-center">
+Skeleton components act as placeholders while content is loading, showing a basic structure that mimics the final layout.
+This technique improves perceived performance and provides a smoother user experience during data fetching.
+
+<div className="flex flex-col gap-8 justify-center">
   <DocsTemplate preview={SkeletonPreview()}>
     ```jsx
     import { Skeleton, SkeletonContainer, SkeletonItem } from 'rewind-uikit';
