@@ -5,8 +5,8 @@ import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 
 
 export default [
-  {languageOptions: { globals: globals.browser }},
-  {ignores: ["tailwind.config.js", "docusaurus.config.ts"]},
+  { languageOptions: { globals: globals.browser } },
+  { ignores: ["tailwind.config.js", "docusaurus.config.ts", "docs/components/navbar.mdx"] },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReactConfig,
